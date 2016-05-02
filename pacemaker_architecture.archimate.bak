@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Pacemaker_Android" id="1b494c8e" version="3.1.1">
+  <folder name="Business" id="657fc51f" type="business">
+    <element xsi:type="archimate:BusinessRole" id="978c6331" name="Pacemaker User"/>
+    <element xsi:type="archimate:BusinessFunction" id="62416aba" name="Activity Capabilities"/>
+    <element xsi:type="archimate:BusinessFunction" id="b80da905" name="List, Log, Create and Delete Activities"/>
+    <element xsi:type="archimate:BusinessFunction" id="c7214f66" name="Progress Reports on Finished Activities"/>
+    <element xsi:type="archimate:BusinessFunction" id="368ac454" name="Suggested Workouts Based on Desired Results and Previous Activities"/>
+    <element xsi:type="archimate:BusinessFunction" id="37c9e605" name="Compare Workouts with Friends"/>
+    <element xsi:type="archimate:BusinessFunction" id="37c60a8c" name="Friend Capabilities"/>
+    <element xsi:type="archimate:BusinessFunction" id="b7c91763" name="List and Add/Delete Friends"/>
+    <element xsi:type="archimate:BusinessFunction" id="fe62888a" name="Dashboard List"/>
+  </folder>
+  <folder name="Application" id="fdfc1480" type="application">
+    <element xsi:type="archimate:ApplicationComponent" id="616d7129" name="Pacemaker Database (MySQL)"/>
+    <element xsi:type="archimate:DataObject" id="bda0aa0d" name="User Activities"/>
+    <element xsi:type="archimate:DataObject" id="9f783976" name="Distnace (km)"/>
+    <element xsi:type="archimate:DataObject" id="e2a11390" name="Exercise Type (Run, Walk, etc.)"/>
+    <element xsi:type="archimate:DataObject" id="18b01dd8" name="Location"/>
+    <element xsi:type="archimate:DataObject" id="3f9d2fb7" name="Activity Start Time"/>
+    <element xsi:type="archimate:DataObject" id="b75ce66c" name="Activity Duration"/>
+    <element xsi:type="archimate:DataObject" id="a29bac60" name="User Friends"/>
+    <element xsi:type="archimate:DataObject" id="5cb5a2dc" name="User Id"/>
+    <element xsi:type="archimate:DataObject" id="e0421bf6" name="Friend Id"/>
+    <element xsi:type="archimate:DataObject" id="485e08f7" name="Has Friend Accepted Request"/>
+    <element xsi:type="archimate:ApplicationFunction" id="1bb71afd" name="Activity Functions"/>
+    <element xsi:type="archimate:ApplicationComponent" id="add89549" name="Pacemaker Dashboard"/>
+    <element xsi:type="archimate:ApplicationFunction" id="721a92ff" name="List Activities"/>
+    <element xsi:type="archimate:ApplicationFunction" id="4dbf1be8" name="Edit Activity"/>
+    <element xsi:type="archimate:ApplicationFunction" id="0147da37" name="Create Activity"/>
+    <element xsi:type="archimate:ApplicationFunction" id="40b8f964" name="Progress Reports"/>
+    <element xsi:type="archimate:ApplicationFunction" id="57ac8972" name="Suggested Workouts"/>
+    <element xsi:type="archimate:ApplicationFunction" id="307e9789" name="Friends List"/>
+    <element xsi:type="archimate:ApplicationFunction" id="504cd33f" name="Accept Friends"/>
+    <element xsi:type="archimate:ApplicationFunction" id="f8f555bd" name="Add Friends"/>
+    <element xsi:type="archimate:ApplicationFunction" id="f12d7f4b" name="Logout"/>
+  </folder>
+  <folder name="Technology" id="6fc92368" type="technology">
+    <element xsi:type="archimate:SystemSoftware" id="75abbe0c" name="Pacemaker MySQL Database"/>
+  </folder>
+  <folder name="Motivation" id="db8b4534" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="9618b6ed" type="implementation_migration"/>
+  <folder name="Connectors" id="d0559f26" type="connectors"/>
+  <folder name="Relations" id="2c119d13" type="relations">
+    <element xsi:type="archimate:CompositionRelationship" id="ef22784b" source="bda0aa0d" target="9f783976"/>
+    <element xsi:type="archimate:CompositionRelationship" id="93dc0455" source="bda0aa0d" target="e2a11390"/>
+    <element xsi:type="archimate:CompositionRelationship" id="636875c3" source="bda0aa0d" target="18b01dd8"/>
+    <element xsi:type="archimate:CompositionRelationship" id="9bd2de80" source="bda0aa0d" target="3f9d2fb7"/>
+    <element xsi:type="archimate:CompositionRelationship" id="486a9fbd" source="bda0aa0d" target="b75ce66c"/>
+    <element xsi:type="archimate:CompositionRelationship" id="6778af10" source="a29bac60" target="5cb5a2dc"/>
+    <element xsi:type="archimate:CompositionRelationship" id="ee823f7b" source="a29bac60" target="e0421bf6"/>
+    <element xsi:type="archimate:CompositionRelationship" id="dd740c54" source="a29bac60" target="485e08f7"/>
+    <element xsi:type="archimate:FlowRelationship" id="481dd589" source="978c6331" target="62416aba"/>
+    <element xsi:type="archimate:AssociationRelationship" id="e9b4e077" source="bda0aa0d" target="62416aba"/>
+    <element xsi:type="archimate:CompositionRelationship" id="27f79d41" source="62416aba" target="b80da905"/>
+    <element xsi:type="archimate:CompositionRelationship" id="c68fa150" source="62416aba" target="c7214f66"/>
+    <element xsi:type="archimate:CompositionRelationship" id="c6bc8c27" source="62416aba" target="368ac454"/>
+    <element xsi:type="archimate:UsedByRelationship" id="82b6a2ba" source="37c9e605" target="62416aba"/>
+    <element xsi:type="archimate:UsedByRelationship" id="6065efb6" source="37c9e605" target="37c60a8c"/>
+    <element xsi:type="archimate:AssociationRelationship" id="7baa5701" source="37c60a8c" target="a29bac60"/>
+    <element xsi:type="archimate:CompositionRelationship" id="ac023a32" source="37c60a8c" target="b7c91763"/>
+    <element xsi:type="archimate:FlowRelationship" id="190e071e" source="978c6331" target="37c60a8c"/>
+    <element xsi:type="archimate:FlowRelationship" id="09b8e89e" source="978c6331" target="37c9e605"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="019e000c" source="add89549" target="62416aba"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="1f4acfd5" source="add89549" target="978c6331"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="c8e0b9b9" source="add89549" target="fe62888a"/>
+    <element xsi:type="archimate:CompositionRelationship" id="140160b5" source="721a92ff" target="4dbf1be8"/>
+  </folder>
+  <folder name="Views" id="24931852" type="diagrams">
+    <folder name="Pacemaker Dashboard" id="e07b2007">
+      <folder name="Context View" id="d4bcba75">
+        <element xsi:type="archimate:ArchimateDiagramModel" id="833d3e43" name="System Context">
+          <child xsi:type="archimate:DiagramObject" id="bce5586f" lineColor="#5c5c5c" textAlignment="2" fillColor="#e6ffff" archimateElement="978c6331">
+            <bounds x="48" y="348" width="120" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="2abff84d" lineColor="#000000" source="bce5586f" target="f186ff32" relationship="481dd589"/>
+            <sourceConnection xsi:type="archimate:Connection" id="89c254c1" lineColor="#000000" source="bce5586f" target="20e76c6f" relationship="190e071e"/>
+            <sourceConnection xsi:type="archimate:Connection" id="20668fb4" lineColor="#000000" source="bce5586f" target="c1876227" relationship="09b8e89e"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="fe98241e" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffff" archimateElement="616d7129">
+            <bounds x="828" y="12" width="421" height="625"/>
+            <child xsi:type="archimate:DiagramObject" id="6292dff7" lineColor="#5c5c5c" textAlignment="2" fillColor="#7dffff" archimateElement="75abbe0c">
+              <bounds x="36" y="36" width="157" height="55"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="16ae9acd" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="bda0aa0d">
+              <bounds x="36" y="108" width="361" height="253"/>
+              <sourceConnection xsi:type="archimate:Connection" id="b42f8d25" lineColor="#000000" source="16ae9acd" target="f186ff32" relationship="e9b4e077"/>
+              <child xsi:type="archimate:DiagramObject" id="ddbd3adb" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="9f783976">
+                <bounds x="12" y="36" width="133" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="89a6f780" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="e2a11390">
+                <bounds x="192" y="36" width="144" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="96921797" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="18b01dd8">
+                <bounds x="12" y="108" width="133" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="2136e48f" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="3f9d2fb7">
+                <bounds x="192" y="108" width="144" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="f369654a" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="b75ce66c">
+                <bounds x="12" y="180" width="133" height="55"/>
+              </child>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="be598f21" lineColor="#5c5c5c" textAlignment="2" targetConnections="4afabe92" fillColor="#afffaf" archimateElement="a29bac60">
+              <bounds x="36" y="384" width="361" height="229"/>
+              <child xsi:type="archimate:DiagramObject" id="d29edab7" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="5cb5a2dc">
+                <bounds x="12" y="36" width="145" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="0e1caa1d" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="e0421bf6">
+                <bounds x="204" y="36" width="133" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="aba22225" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffaf" archimateElement="485e08f7">
+                <bounds x="12" y="108" width="145" height="55"/>
+              </child>
+            </child>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="f186ff32" lineColor="#5c5c5c" textAlignment="2" targetConnections="2abff84d b42f8d25 76b1607d" fillColor="#ffffe6" archimateElement="62416aba">
+            <bounds x="360" y="96" width="301" height="265"/>
+            <child xsi:type="archimate:DiagramObject" id="25d82f19" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffe6" archimateElement="b80da905">
+              <bounds x="48" y="36" width="193" height="55"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="31ffcb6d" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffe6" archimateElement="c7214f66">
+              <bounds x="48" y="108" width="193" height="55"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="3c98e20b" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffe6" archimateElement="368ac454">
+              <bounds x="48" y="180" width="193" height="55"/>
+            </child>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="c1876227" lineColor="#5c5c5c" textAlignment="2" targetConnections="20668fb4" fillColor="#ffffe6" archimateElement="37c9e605">
+            <bounds x="432" y="396" width="169" height="55"/>
+            <sourceConnection xsi:type="archimate:Connection" id="76b1607d" lineColor="#000000" source="c1876227" target="f186ff32" relationship="82b6a2ba"/>
+            <sourceConnection xsi:type="archimate:Connection" id="bf538ea6" lineColor="#000000" source="c1876227" target="20e76c6f" relationship="6065efb6"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="20e76c6f" lineColor="#5c5c5c" textAlignment="2" targetConnections="bf538ea6 89c254c1" fillColor="#ffffe6" archimateElement="37c60a8c">
+            <bounds x="372" y="480" width="289" height="133"/>
+            <sourceConnection xsi:type="archimate:Connection" id="4afabe92" lineColor="#000000" source="20e76c6f" target="be598f21" relationship="7baa5701"/>
+            <child xsi:type="archimate:DiagramObject" id="d0cd69cd" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffe6" archimateElement="b7c91763">
+              <bounds x="48" y="36" width="181" height="55"/>
+            </child>
+          </child>
+          <child xsi:type="archimate:Note" id="c9168ab8" lineColor="#5c5c5c" textAlignment="1" fillColor="#ffffff">
+            <bounds x="24" y="162" width="241" height="133"/>
+            <content>A Pacemaker user should be able to 
+- Track and log activities
+- Obtain progress reports on their activities
+- Have prescribed workouts based on previous activities
+- Connect with firends and compare workouts with friends</content>
+          </child>
+        </element>
+        <element xsi:type="archimate:ArchimateDiagramModel" id="722a5e7e" name="System Features">
+          <child xsi:type="archimate:DiagramObject" id="41497f88" lineColor="#5c5c5c" textAlignment="2" targetConnections="405942bd" fillColor="#e6ffff" archimateElement="978c6331">
+            <bounds x="214" y="36" width="120" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="8e2fa0fc" lineColor="#5c5c5c" textAlignment="2" fillColor="#afffff" archimateElement="add89549">
+            <bounds x="91" y="182" width="366" height="491"/>
+            <sourceConnection xsi:type="archimate:Connection" id="405942bd" lineColor="#000000" source="8e2fa0fc" target="41497f88" relationship="1f4acfd5"/>
+            <child xsi:type="archimate:DiagramObject" id="e30cee88" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffe6" archimateElement="fe62888a">
+              <bounds x="48" y="36" width="289" height="433"/>
+              <child xsi:type="archimate:DiagramObject" id="1be1bc99" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="721a92ff">
+                <bounds x="24" y="36" width="241" height="97"/>
+                <child xsi:type="archimate:DiagramObject" id="735467d2" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="4dbf1be8">
+                  <bounds x="36" y="36" width="157" height="37"/>
+                </child>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="6ac8fba9" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="0147da37">
+                <bounds x="12" y="156" width="121" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="6e6d1f72" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="40b8f964">
+                <bounds x="156" y="156" width="120" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="94166dcd" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="57ac8972">
+                <bounds x="13" y="228" width="120" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="ea5fdf57" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="307e9789">
+                <bounds x="156" y="228" width="120" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="08a77dc7" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="504cd33f">
+                <bounds x="13" y="300" width="120" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="afef1610" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="f8f555bd">
+                <bounds x="156" y="300" width="120" height="55"/>
+              </child>
+              <child xsi:type="archimate:DiagramObject" id="4e589430" lineColor="#5c5c5c" textAlignment="2" fillColor="#ffffaf" archimateElement="f12d7f4b">
+                <bounds x="13" y="372" width="120" height="55"/>
+              </child>
+            </child>
+          </child>
+        </element>
+      </folder>
+    </folder>
+  </folder>
+</archimate:model>
